@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block swiper %}
+
+{% endblock swiper %}
+
+
+{% block main %}
+
+
+<main class="main">
+    <div class="profile">
+        <div class="container">
+            <div class="profile__content">
+                <form class="profile__form">
+                    <h2 class="profile__title">Личные данные</h2>
+                    <div class="profile__form-grid">
+
+                        <div class="input__title">
+                            <h2>Имя</h2>
+                            <input type="text" value="{{ profile.user.first_name }}" class="contact__section-input">
+                        </div>
+                        <div class="input__title">
+                            <h2>E-mail</h2>
+                            <input type="email" value="{{ profile.user.email }}" class="contact__section-input">
+                        </div>
+                        <div class="input__title">
+                            <h2>Фамилия</h2>
+                            <input type="text" value="{{ profile.user.last_name }}" class="contact__section-input">
+                        </div>
+                        <div class="input__title">
+                            <h2>Номер телефона</h2>
+                            {% if profile.phone_number is None %}
+                            <input type="tel" value="Вы не указали номер телефона в профиле" class="contact__section-input">
+                            {% else %}
+                            <input type="tel" value="{{ profile.phone_number }}" class="contact__section-input">
+                            {% endif %}
+                        </div>
+                        <div class="input__title">
+                            <h2>Город проживания</h2>
+                            {% if profile.city is None %}
+                            <input type="tel" value="Вы не указали город проживания в профиле" class="contact__section-input">
+                            {% else %}
+                            <input type="tel" value="{{ profile.city }}" class="contact__section-input">
+                            {% endif %}
+                        </div>
+                        <a href="{% url 'edit_account' profile.user.pk %}" class="btn profile__btn bg-secondary">Изменить Аккаунт</a>
+                        <a href="{% url 'edit_profile' profile.user.pk %}" class="btn profile__btn bg-secondary">Изменить Профиль</a>
+
+                    </div>
+
+
+
+                </form>
+                <div class="profile__orders">
+                    <h2 class="profile__title">Мои заказы</h2>
+
+                    <table class="profile__table">
+                        <tr>
+                            <td colspan="4">Товар</td>
+                            <td>Цена</td>
+                            <td>Дата</td>
+
+
+                        </tr>
+                        {% for item in products %}
+                        <tr>
+
+                            <td colspan="4" class="profile__title-adaptive">
+                                <div class="tabel__item">
+                                    <img src="{{ item.product.get_image_product }}" alt="img">
+                                    <span></span>
+                                </div>
+                            </td>
+                            <td class="profile__tabel-data">{{ item.product.price }}</td>
+                            <td class="profile__tabel-data">{{ item.added_at }}</td>
+                            <td class="profile__tabel-data">{{ item.shipping }}</td>
+                        </tr>
+                        {% endfor %}
+
+
+                        <!-- Не трогать - это заглушка для корректного отображения таблицы -->
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <!-- Не трогать - это заглушка для корректного отображения таблицы -->
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+{% endblock main %}

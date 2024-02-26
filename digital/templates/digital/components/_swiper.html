@@ -1,0 +1,44 @@
+{% load static %}
+
+<div class="slider" data-infinity="true">
+    <div class="sliderLines">
+        <div class="slider__item">
+            <img src="{% static 'digital/assets/images/banner-1.png' %}" alt="banner" class="slider__img">
+            <div class="slider__item-content">
+                <h2 class="slider__item-title">loft мебель</h2>
+                <p class="slider__item-descr">
+                    Современная и удобная мебель в Ташкенте
+                </p>
+                <a href="{% url 'index' %}" class="slider__item-button">СМОТРЕТЬ КАТАЛОГ</a>
+            </div>
+        </div>
+        <div class="slider__item">
+            <img src="{% static 'digital/assets/images/banner-2.png' %}" alt="banner" class="slider__img">
+            <div class="slider__item-content">
+                <h2 class="slider__item-title">loft мебель</h2>
+                <p class="slider__item-descr">
+                    Современная и удобная мебель в Ташкенте
+                </p>
+                <a href="{% url 'index' %}" class="slider__item-button">СМОТРЕТЬ КАТАЛОГ</a>
+            </div>
+        </div>
+        <div class="slider__item">
+            <img src="{% static 'digital/assets/images/banner-3.png' %}" alt="banner" class="slider__img">
+            <div class="slider__item-content">
+                <h2 class="slider__item-title">loft мебель</h2>
+                <p class="slider__item-descr">
+                    Современная и удобная мебель в Ташкентн
+                </p>
+                <a href="{% url 'index' %}" class="slider__item-button">СМОТРЕТЬ КАТАЛОГ</a>
+            </div>
+        </div>
+    </div>
+    <div class="slider__btns">
+        <button class="btn__prev">
+            <img src="{% static 'digital/assets/icons/arrow.svg' %}" alt="arrow">
+        </button>
+        <button class="btn__next">
+            <img src="{% static 'digital/assets/icons/arrow.svg' %}" alt="arrow">
+        </button>
+    </div>
+</div>

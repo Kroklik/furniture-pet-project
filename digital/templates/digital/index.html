@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block swiper %}
+{% include 'digital/components/_swiper.html' %}
+{% endblock swiper %}
+
+
+{% block main %}
+
+<main class="main">
+    <div class="container">
+        <section class="products">
+            <h2 class="products__title">Новинки</h2>
+            <div class="products__content">
+
+                {% for category in categories %}
+                {% for product in category.products.all|slice:"-1" %}
+
+                {% include 'digital/components/_product.html' %}
+
+                {% endfor %}
+                {% endfor %}
+            </div>
+            <!-- /.products__content -->
+        </section>
+        <!-- /.products -->
+    </div>
+    <!-- /.container -->
+</main>
+
+
+{% endblock main %}

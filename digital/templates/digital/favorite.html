@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block swiper %}
+
+{% endblock swiper %}
+
+
+{% block main %}
+
+<main class="main">
+    <div class="container">
+        <section class="products">
+            <h2 class="products__title">Избранное</h2>
+            <div class="products__content">
+
+
+                {% for product in products %}
+
+                {% include 'digital/components/_product.html' %}
+
+                {% endfor %}
+            </div>
+            <!-- /.products__content -->
+        </section>
+        <!-- /.products -->
+    </div>
+    <!-- /.container -->
+</main>
+
+
+
+
+{% endblock main %}

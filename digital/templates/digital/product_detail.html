@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load digital_tags %}
+
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block main %}
+<div class="product__slider">
+    <div class="product__slider-content">
+
+        <div class="sliderLines">
+            <div class="product__slider-item active">
+                <img src="{{ product.get_image_product }}" alt="banner"
+                     class="product__slider-img">
+            </div>
+
+
+        </div>
+
+        <div class="product__slider-panel">
+
+
+        </div>
+
+
+    </div>
+
+    <div class="product__slider-parameters">
+
+        <h1 class="product__title">{{ product.title }}</h1>
+        <span class="product__categories">{{ product.category }}</span>
+        <div class="product__links">
+            <h2 class="product__links-price"><span>{% get_normal_price product.price %}</span> UZS</h2>
+            <a href="{% url 'to_cart' product.pk 'add' %}" class="product__links-buy">Купить</a>
+            {% include 'digital/components/_fav_in_detail.html' %}
+        </div>
+
+
+        <p class="product__descr">
+            <span class="product__descr-title">Описание</span>
+
+        <h6>{{ product.description_all }}</h6>
+
+        </p>
+
+
+    </div>
+</div>
+<main class="main">
+    <div class="container">
+        <section class="products">
+            <h2 class="products__title">Хиты продаж</h2>
+            <div class="products__content">
+
+                {% for product in products %}
+                {% include 'digital/components/_product.html' %}
+                {% endfor %}
+
+            </div>
+            <!-- /.products__content -->
+        </section>
+        <!-- /.products -->
+    </div>
+    <!-- /.container -->
+</main>
+{% endblock main %}
+
+

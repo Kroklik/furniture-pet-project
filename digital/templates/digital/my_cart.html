@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load digital_tags %}
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block swiper %}
+
+{% endblock swiper %}
+
+
+{% block main %}
+
+<main class="main">
+    <div class="container">
+        <section class="basket">
+            <div class="basket__text">
+                <h1 class="basket__title">Ваша корзина</h1>
+                <span class="basket__count"><span>Продуктов</span> {{ order.get_cart_total_quantity }}</span>
+            </div>
+            <div class="basket__items">
+                {% for item in products %}
+                {% include 'digital/components/_basket_item.html' %}
+                {% endfor %}
+            </div>
+            <form class="products__form">
+                {% if products %}
+                <span>Итоговая стоимость:<span class="products__form-price">{% get_normal_price order.get_cart_total_price %} UZS</span> </span>
+
+                <a href="{% url 'checkout' %}"  class="bg-secondary btn products__form-btn">Оформить заказ</a>
+                <a href="{% url 'clear_cart' %}" class="btn products__form-btn">Очистить корзину</a>
+                {% endif %}
+            </form>
+        </section>
+        <!-- /.basket -->
+
+
+        <!-- /.products -->
+
+    </div>
+
+
+    <!-- /.container -->
+
+    <!-- /.container -->
+</main>
+{% endblock main %}

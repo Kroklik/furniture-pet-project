@@ -1,0 +1,26 @@
+{% load digital_tags %}
+
+{% if request.user.is_authenticated %}
+
+{% get_favorite_products request.user as fav_products %}
+{% endif %}
+<div class="products__item">
+
+    <a href="{{ product.get_absolute_url }}"> <img src="{{ product.get_image_product }}" alt=""
+                                   class="products__item-img"></a>
+    <div class="products__item-text">
+        <h3 class="products__item-title">{{ product.title }}</h3>
+        <div class="products__item-price">{% get_normal_price product.price %} UZS</div>
+    </div>
+    <!-- /.products__item-text -->
+    <div class="products__item-options products__options">
+        <a href="{% url 'to_cart' product.pk 'add' %}" class="options__btn btn">Добавить в корзину</a>
+
+        {% if product in fav_products and request.user.is_authenticated %}
+        <a href="{% url 'add_favorite' product.slug %}" class="options__btn btn">❤️</a>
+        {% else %}
+        <a href="{% url 'add_favorite' product.slug %}" class="options__btn btn">🤍  </a>
+        {% endif %}
+    </div>
+    <!-- /.products__options -->
+</div>

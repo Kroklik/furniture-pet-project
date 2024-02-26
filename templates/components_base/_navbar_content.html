@@ -1,0 +1,49 @@
+{% load static %}
+
+
+<div class="nav__content">
+    <div class="nav__content-bars">
+        <h2 class="nav__title">Меню</h2>
+        <a href="#!" class="nav__bars-exit">
+            <img src="{% static 'digital/assets/icons/exit.svg' %}" alt="exit">
+        </a>
+    </div>
+    <ul class="nav__list">
+        <li>
+            <a href="{% url 'index' %}" class="nav__list-links">
+                <img src="{% static 'digital/assets/icons/home.svg' %}" alt="home">
+                Главная
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'about_us' %}" class="nav__list-links">
+                <img src="{% static 'digital/assets/icons/aboute.svg' %}" alt="aboute">
+                О нас
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'contacts' %}" class="nav__list-links">
+                <img src="{% static 'digital/assets/icons/contacts.svg' %}" alt="contacts">
+                Контакты
+            </a>
+        </li>
+    </ul>
+    <!-- /.nav__list -->
+    <ul class="nav__contacts">
+        <li>
+            <a href="https://t.me/kuro4ka24" class="nav__contacts-links">
+                <i class="far fa-phone-alt"></i>
+                998 (94) 712-9-712
+            </a>
+        </li>
+        <li>
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'profile' request.user.pk %}" class="nav__contacts-links text-white">
+                Мой Профиль 🙎‍♂️
+            </a>
+            {% endif %}
+        </li>
+    </ul>
+    <!-- /.nav__contacts -->
+
+</div>

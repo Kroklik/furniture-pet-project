@@ -1,0 +1,60 @@
+{% load static %}
+
+
+<footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__navigate">
+                    <div class="footer__navigate-part">
+                        <h2 class="footer__navigate-title">НАВИГАЦИЯ</h2>
+                        <div class="footer__navigate-lists">
+                            <ul class="footer__navigate-list">
+                                <li><a href="https://t.me/kuro4ka24" class="footer__navigate-links">Контакты разработчика</a></li>
+                                <li><a href="https://www.djangoproject.com/" class="footer__navigate-links">Сайт был разработан на Python с помощью фреймворка Django</a></li>
+                                <li><a href="{% url 'index' %}" class="footer__navigate-links">Желаем приятных покупок</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <!-- /.footer__navigate-part -->
+                    <div class="footer__navigate-part _right">
+                        <a href="./index.html" class="footer__logo">LM</a>
+                        <p class="footer__adress">г. Ташкент, Мирзо Улугбекский район дом 26</p>
+                    </div>
+                    <!-- /.footer__navigate-part _right -->
+                </div>
+                <!-- /.footer__navigate -->
+
+                <div class="footer__social">
+                    <ul class="footer__navigate-list _short">
+                        <li><a href="#!" class="footer__navigate-links">Акция</a></li>
+                        <li><a href="#!" class="footer__navigate-links">Новинки</a></li>
+                    </ul>
+
+                    <ul class="footer__social-list">
+                        <li>
+                            <a href="tel:89648999119" class="footer__social-links">
+                                <img src="{% static 'digital/assets/icons/phone.svg' %}" alt="phone">
+                                998 (94) 712-9-712
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/" target="_blank" class="footer__social-links">
+                                <img src="{% static 'digital/assets/icons/inst.svg' %}" alt="insta">
+                                INSTAGRAM
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:pupzemli092@gmail.com" target="_blank" class="footer__social-links">
+                                <img src="{% static 'digital/assets/icons/mail.svg' %}" alt="mail">
+                               pupzemli092@gmail.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.footer__social -->
+            </div>
+            <!-- /.footer__content -->
+        </div>
+        <!-- /.container -->
+    </footer>

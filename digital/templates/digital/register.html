@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block main %}
+<main class="main">
+    <div class="registeration">
+        <div class="d-flex justify-content-center">
+            <div class="col-6 card border-white p-4">
+                <form action="{% url 'register' %}" method="post" class="registeration__form active">
+                    {% csrf_token %}
+                    <h2 class="registeration__title products__title">Регистрация</h2>
+                    <div class="registeration__form-grid">
+
+                        <div>{{ form.username }}</div>
+                        <div>{{ form.first_name }}</div>
+                        <div>{{ form.last_name }}</div>
+                        <div>{{ form.email }}</div>
+                        <div>{{ form.password1 }}</div>
+                        <div>{{ form.password2 }}</div>
+
+                    </div>
+
+                    <div class="registeration__btns">
+
+                        <button class="btn registeration__btn-login _revers" type="submit">Регистрация</button>
+
+
+                    </div>
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock main %}

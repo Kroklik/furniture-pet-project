@@ -1,0 +1,38 @@
+{% load static %}
+{% load digital_tags %}
+<div class="basket__item">
+    <a href="#!" class="basket__item-img">
+        <img src="{{ item.product.get_image_product }}" alt="product">
+    </a>
+    <div class="basket__item-content">
+        <div class="basket__item-text">
+            <h2 class="basket__item-title">{{ item.product.title }}</h2>
+
+            <p class="basket__item-price">
+
+                <span class="price">Итого<span> {% get_normal_price item.get_total_price %}</span> UZS</span>
+
+            </p>
+        </div>
+        <div class="basket__options">
+            <p class="basket__options-count">
+                Количество: <span>{{ item.quantity }}</span>
+
+            </p>
+            <div>
+
+                <a href="{% url 'to_cart' item.product.pk 'add' %}">
+                    ➕
+                </a>
+
+
+                <a href="{% url 'to_cart' item.product.pk 'del' %}">
+                    ➖
+                </a>
+                <span class="p-4 price">Стоимость<span> {% get_normal_price item.product.price %}</span> UZS</span>
+            </div>
+
+        </div>
+    </div>
+
+</div>

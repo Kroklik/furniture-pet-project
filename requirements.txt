@@ -1,0 +1,17 @@
+asgiref==3.7.2
+certifi==2024.2.2
+charset-normalizer==3.3.2
+defusedxml==0.7.1
+Django==5.0.2
+django-inline-svg==0.1.1
+django-jazzmin==2.6.0
+django-svg-image-form-field==1.0.1
+idna==3.6
+pillow==10.2.0
+python-decouple==3.8
+requests==2.31.0
+sqlparse==0.4.4
+stripe==8.4.0
+typing_extensions==4.9.0
+tzdata==2024.1
+urllib3==2.2.1

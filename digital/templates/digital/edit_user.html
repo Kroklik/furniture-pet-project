@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block swiper %}
+
+{% endblock swiper %}
+
+
+{% block main %}
+
+
+<main class="main">
+    <div class="registeration">
+        <div class="d-flex justify-content-center">
+            <div class="col-6 card border-white p-4">
+                {% if 'edit_account' in request.path %}
+                <form action="{% url 'chg_account' %}" method="post" enctype="multipart/form-data" class="registeration__form active">
+                    {% csrf_token %}
+                    <h2 class="registeration__title products__title">Изменение Аккаунта</h2>
+                    <div class="registeration__form-grid">
+
+                        <div>{{ edit_account_form.username }}</div>
+                        <div>{{ edit_account_form.first_name }}</div>
+                        <div>{{ edit_account_form.last_name }}</div>
+                        <div>{{ edit_account_form.email }}</div>
+                        <div>{{ edit_account_form.old_password }}</div>
+                        <div>{{ edit_account_form.new_password }}</div>
+                        <div>{{ edit_account_form.confirm_password }}</div>
+
+                    </div>
+
+                    <div class="registeration__btns">
+
+                        <button class="btn registeration__btn-login _revers bg-secondary" type="submit">Изменить</button>
+
+
+                    </div>
+
+                </form>
+                {% elif 'edit_profile' in request.path %}
+                <form action="{% url 'chg_profile' %}" method="post" class="registeration__form active" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h2 class="registeration__title products__title">Изменение Профиля</h2>
+                    <div class="registeration__form-grid">
+
+                        <div>{{ edit_profile_form.phone_number }}</div>
+                        <div>{{ edit_profile_form.city }}</div>
+
+                    </div>
+
+                    <div class="registeration__btns">
+                        <button class="btn registeration__btn-login _revers bg-secondary" type="submit">Изменить</button>
+                    </div>
+
+                </form>
+                {% endif %}
+
+
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+
+
+{% endblock main %}

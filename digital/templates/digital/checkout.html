@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load digital_tags %}
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block slider %}
+{% endblock slider %}
+
+{% block main %}
+
+<main class="main">
+    <div class="container">
+        <section class="contact__section">
+            <h1 class="contact__section-title">Оформление заказа</h1>
+            <div class="contact__section-content">
+                <form action="{% url 'payment' %}" class="contact__section-form" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                        <div class="input__title p-2">
+                            <h2>Ваш город</h2>
+                            {{ shipping_form.city }}
+                        </div>
+
+                        <div class="input__title p-2">
+                            <h2>Ваш адрес</h2>
+                            {{ shipping_form.address }}
+                        </div>
+
+                        <div class="input__title p-2">
+                            <h2>Ваш номер телефона</h2>
+                            {{ shipping_form.phone }}
+                        </div>
+
+                        <div class="input__title p-2">
+                        <h2>Краткий комментарий</h2>
+                        {{ shipping_form.comment }}
+                        </div>
+
+
+                        <div class="input__title p-2">
+                            <h2>Ваше имя</h2>
+                            {{ customer_form.first_name }}
+                        </div>
+                        <div class="input__title p-2">
+                            <h2>Ваша Фамилия</h2>
+                            {{ customer_form.last_name }}
+                        </div>
+                        <div class="input__title p-2">
+                            <h2>Ваша почта</h2>
+                            {{ customer_form.email }}
+                        </div>
+                        <div>
+                            <h5>Сумма оплаты: {% get_normal_price order.get_cart_total_price %}</h5>
+                        </div>
+
+
+
+                    <div class="contact__section-btns">
+
+                        <button class="btn btns__send bg-secondary" type="submit">Оформить заказ</button>
+                    </div>
+                </form>
+                <div class="contact__section-list">
+                    <ul class="contact__social-list">
+                        <li>
+                            <a href="tel:998938884468" class="contact__social-links">
+                                <img src="{% static 'digital/assets/icons/phone.svg' %}" alt="phone">
+                                998 (94) 712-9-712
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/saidamir_ikramov24/" target="_blank"
+                               class="contact__social-links">
+                                <img src="{% static 'digital/assets/icons/inst.svg' %}" alt="insta">
+                                INSTAGRAM
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:pupzemli092@gmail.com" target="_blank"
+                               class="contact__social-links">
+                                <img src="{% static 'digital/assets/icons/mail.svg' %}" alt="mail">
+                                pupzemli092@gmail.com
+                            </a>
+                        </li>
+
+                    </ul>
+
+                    <p class="contact__adress">г. Ташкент, Мирзо Улугбекский район дом 26</p>
+
+
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <!-- /.container -->
+</main>
+
+
+{% endblock main %}

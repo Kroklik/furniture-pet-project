@@ -1,0 +1,146 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <!-- Css - Стили -->
+    <link rel="stylesheet" href="{% static 'digital/assets/fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'digital/style/style.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <title>
+        {% block title %}
+
+        {% endblock title %}
+    </title>
+
+    <style>
+        a {
+            text-decoration:none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+{% for message in messages %}
+    <div class="alert {{ message.tags }}" role="alert" id="message">
+        {{ message }}
+    </div>
+{% endfor %}
+
+<nav class="nav">
+    <div class="container _nav">
+
+        {% include 'components_base/_navbar_content.html' %}
+
+
+        <!-- /.nav__content -->
+    </div>
+    <!-- /.container -->
+
+
+    {% include 'components_base/_burger_menu.html' %}
+
+
+    <!-- /.nav__catigories -->
+</nav>
+<!-- /.nav -->
+
+<div class="wrapper">
+
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__bar">
+                    <a href="#!" class="nav__bars-open">
+                        <span class="burger"></span>
+                        <span class="burger"></span>
+                        <span class="burger"></span>
+                    </a>
+
+                    <a href="{% url 'index' %}" class="logo">
+                        <img src="{% static 'digital/assets/icons/LOGO.svg' %}" alt="logo">
+                    </a>
+                    <form class="header__search" action="{% url 'search' %}">
+                        <i class="fal fa-search"></i>
+                        <input name="q" type="text" class="header__search-txt" placeholder="Поиск">
+
+                    </form>
+
+                    <ul class="header__list">
+
+                        <li>
+                            <a href="{% url 'my_favorite' %}" class="header__list-item" id="_heart">
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'my_cart' %}" class="header__list-item" id="_bag">
+
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./registration.html" class="header__list-item _truck">
+                                <i class="far fa-truck"></i>
+                                Доставка
+                            </a>
+                        </li>
+                        {% if not request.user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'login' %}" class="header__list-item" id="_profile"></a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{% url 'logout' %}" class="header__list-item">Выйти с аккаунта</a>
+                        </li>
+
+
+                        {% endif %}
+
+                    </ul>
+                </div>
+
+                {% include 'components_base/_categories_list.html' %}
+
+                <!-- /.nav__catigories -->
+
+                {% block swiper %}
+
+                {% endblock swiper %}
+
+
+            </div>
+            <!-- /.header__content -->
+        </div>
+        <!-- /.container -->
+    </header>
+    <!-- /.header -->
+
+    {% block main %}
+
+
+    {% endblock main %}
+
+
+    <!-- /.main -->
+    {% include 'components_base/_footer.html' %}
+
+
+    <!-- /.footer -->
+</div>
+<!-- /.wrapper -->
+
+{% include 'components_base/_script.html' %}
+
+
+<!-- Js - скрипты -->
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{% load digital_tags %}
+
+{% if request.user.is_authenticated %}
+{% get_favorite_products request.user as fav_products %}
+{% endif %}
+
+
+{% if product in fav_products and request.user.is_authenticated %}
+<a href="{% url 'add_favorite' product.slug %}">❤️</a>
+{% else %}
+<a href="{% url 'add_favorite' product.slug %}">🤍 </a>
+{% endif %}

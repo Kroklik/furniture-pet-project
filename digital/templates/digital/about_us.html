@@ -1,0 +1,284 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load digital_tags %}
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block swiper %}
+
+{% endblock swiper %}
+
+
+{% block main %}
+<main class="main">
+    <section class="info__section">
+        <div class="info__section-bg"></div>
+        <div class="container">
+            <div class="info__section-content">
+                <div class="info__section-txt">
+                    <h2 class="info__section-subtitle">О магазине</h2>
+                    <h1 class="info__section-title">
+                        Интернет-магазин «Лофт Мебель»:
+                        купите хорошую
+                        мебель в один клик!
+                    </h1>
+                    <p class="info__section-descr">
+                        Уникальный формат интернет-магазина позволит вам купить лучшую
+                        мебель крупнейших российских фабрик максимально быстро и по
+                        выгодной цене!
+                        <span>
+                                    Мы благодарим за доверие более десятка производителей, которые дали
+                                    нам возможность представлять лучшие образцы их продукции в
+                                    российском интернет-пространстве. Прямые договоры на поставку
+                                    мебели с фабрик обеспечивают наиболее привлекательные условия для
+                                    наших покупателей
+                                </span>
+                    </p>
+                </div>
+                <div class="info__section-banner">
+                    <img src="{% static 'digital/assets/images/aboute.png' %}" alt="aboute">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.info__section -->
+
+    <section class="sentence">
+        <div class="container">
+            <div class="sentence__content">
+                <h2 class="sentence__title">Покупайте с выгодой!</h2>
+                <div class="sentence__items">
+                    <div class="sentence__item">
+                        <div class="sentence__item-img">
+                            <img src="{% static 'digital/assets/icons/sentence/profit-icon.svg' %}" alt="icon">
+
+                        </div>
+                        <div class="sentence__item-txt">
+                            <h3 class="sentence__item-title">Лучшая цена</h3>
+                            <p class="sentence__item-descr">
+                                Предлагаем близкие к оптовым цены, которые дают возможность приобретать мебель
+                                дешевле, чем в розничных салонах и шоу-румах.
+                            </p>
+                        </div>
+
+                    </div>
+                    <!-- /.sentence__item -->
+                    <div class="sentence__item">
+                        <div class="sentence__item-img">
+                            <img src="{% static 'digital/assets/icons/sentence/supplies-icon.svg' %}" alt="icon">
+
+                        </div>
+                        <div class="sentence__item-txt">
+                            <h3 class="sentence__item-title">Прямые поставки</h3>
+                            <p class="sentence__item-descr">
+                                С ведущих мебельных фабрик уменьшают срок
+                                выполнения вашего заказа, даже если речь идет об изготовлении предметов по
+                                индивидуальному проекту.
+
+                            </p>
+                        </div>
+
+                    </div>
+                    <!-- /.sentence__item -->
+                    <div class="sentence__item">
+                        <div class="sentence__item-img">
+                            <img src="{% static 'digital/assets/icons/sentence/time-icon.svg' %}" alt="icon">
+
+                        </div>
+                        <div class="sentence__item-txt">
+                            <h3 class="sentence__item-title">Экономие времени</h3>
+                            <p class="sentence__item-descr">
+                                Не нашли оптимальный вариант или нет
+                                времени на поиски? Оставьте онлайн-заявку с критериями, и мы предложим вам
+                                несколько достойных образцов.
+                            </p>
+                        </div>
+
+                    </div>
+                    <!-- /.sentence__item -->
+                    <div class="sentence__item">
+                        <div class="sentence__item-img">
+                            <img src="{% static 'digital/assets/icons/sentence/production-icon.svg' %}" alt="icon">
+
+                        </div>
+                        <div class="sentence__item-txt">
+                            <h3 class="sentence__item-title">Изготовление на заказ</h3>
+                            <p class="sentence__item-descr">
+                                Принимаем заявки на изготовление
+                                мебели по персональному дизайн-проекту от покупателей из любой точки России.
+                                Просим быть готовыми к авансированной оплате персональных заказов.
+                            </p>
+                        </div>
+
+                    </div>
+                    <!-- /.sentence__item -->
+                </div>
+                <!-- /.sentence__items -->
+            </div>
+        </div>
+    </section>
+    <!-- /.sentence -->
+
+    <section class="sentence">
+        <div class="container">
+            <div class="offers__content">
+                <div class="offers__item">
+                    <h2 class="offers__item-title">Самые «вкусные» предложения</h2>
+                    <p class="offers__item-descr">
+                        Мы делаем всё
+                        необходимое, чтобы покупатели получали доступ к актуальным новинкам, которые
+                        представляет российский мебельный рынок. Познакомиться с каждой моделью,
+                        сравнить цены на аналоги и выбрать лучшее вы можете прямо сейчас. Хотите
+                        первыми узнавать о самых выгодных предложениях? Тогда подписывайтесь на
+                        информационную рассылку!
+                    </p>
+                </div>
+                <!-- /.offers__item -->
+                <div class="offers__item">
+                    <h2 class="offers__item-title">Гарантированное качество</h2>
+                    <p class="offers__item-descr">
+                        Вся продукция сопровождается
+                        гарантией производителя. В каталогах представлена только сертифицированная
+                        мебель. Собственный контроль качества тщательно проверяет каждый образец
+                        перед отправкой заказчику. Покупатели получают необходимые документы –
+                        гарантийный талон и чек.
+                    </p>
+                </div>
+                <!-- /.offers__item -->
+                <div class="offers__item">
+                    <h2 class="offers__item-title">Впечатляющий ассортимент</h2>
+                    <p class="offers__item-descr">
+                        Ежедневно мы выбираем для
+                        наших каталогов идеальные образцы из товарной матрицы производителей по всей
+                        России. Модные расцветки, экологически безопасные материалы, надежные
+                        комплектующие – у нас вы найдете мебель своей мечты!
+
+                    </p>
+                </div>
+                <!-- /.offers__item -->
+            </div>
+        </div>
+    </section>
+    <!-- /.sentence -->
+
+    <section class="about__cards">
+        <div class="container">
+            <div class="about__cards-content">
+                <div class="about__card">
+                    <div class="about__card-img">
+                        <img src="{% static 'digital/assets/icons/about__card/coop-icons.svg' %}" alt="icons">
+                    </div>
+                    <h2 class="about__card-title">Особенные условия для оптовиков</h2>
+                    <p class="about__card-descr">
+                        Число наших оптовых
+                        покупателей неуклонно возрастает и всё потому, что мы сумели предложить
+                        владельцам мебельных магазинов наиболее выгодные условия.
+                    </p>
+                </div>
+                <!-- /.about__card -->
+                <div class="about__card">
+                    <div class="about__card-img">
+                        <img src="{% static 'digital/assets/icons/about__card/delivery-box-icons.svg' %}" alt="icons">
+                    </div>
+                    <h2 class="about__card-title">Оперативная доставка</h2>
+                    <p class="about__card-descr">
+                        Собственная курьерская служба
+                        быстро привезет купленную мебель по указанному адресу. В российские регионы
+                        доставка осуществляется силами транспортных компаний.
+                    </p>
+                </div>
+                <!-- /.about__card -->
+                <div class="about__card">
+                    <div class="about__card-img">
+                        <img src="{% static 'digital/assets/icons/about__card/support-icons.svg' %}" alt="icons">
+                    </div>
+                    <h2 class="about__card-title">Внимательный сервис</h2>
+                    <p class="about__card-descr">
+                        Квалифицированные менеджеры
+                        интернет-магазина ответят на все вопросы по ассортименту и предоставляемым
+                        возможностям, а также помогут оформить заказ и проконтролируют реализацию
+                        клиентских пожеланий при заказе мебели.
+
+                    </p>
+                </div>
+                <!-- /.about__card -->
+                <div class="about__card">
+                    <div class="about__card-img">
+                        <img src="{% static 'digital/assets/icons/about__card/re-icons.svg' %}" alt="icons">
+                    </div>
+                    <h2 class="about__card-title">
+                        Каждый пятый покупатель заказывает у нас
+                        повторно!
+                    </h2>
+                    <p class="about__card-descr">
+                        И мы благодарим всех, кто воспользовался нашим уникальным предложением, заказал мебель
+                        быстро и недорого и порекомендовал
+                        друзьям и
+                        знакомым.
+                    </p>
+                </div>
+                <!-- /.about__card -->
+
+
+            </div>
+            <!-- /.about__cards-content -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /about__cards -->
+
+    <section class="saving">
+        <div class="container">
+            <div class="saving__content">
+                <h2 class="saving__title">Мы поможем сэкономить время, силы и деньги!</h2>
+                <div class="saving__cards">
+                    <div class="saving__card">
+                        <div class="saving__card-img">
+                            <img src="{% static 'digital/assets/icons/saving.svg' %}" alt="saving">
+                        </div>
+                        <p class="saving__card-txt">
+                            <span>Время. </span>
+                            Примем вашу заявку в кротчайшие сроки. При необходимости
+                            подберем для вас достойные варианты по заданным критериям.
+                        </p>
+                    </div>
+                    <!-- /.saving__card -->
+                    <div class="saving__card">
+                        <div class="saving__card-img">
+                            <img src="{% static 'digital/assets/icons/saving.svg' %}" alt="saving">
+                        </div>
+                        <p class="saving__card-txt">
+                            <span> Силы. </span>
+                            Закупим оптом или закажем на фабрике, избавив от длительных
+                            обсуждений заказа с исполнителем. Курируем все этапы работы над
+                            заказом.
+                        </p>
+                    </div>
+                    <!-- /.saving__card -->
+                    <div class="saving__card">
+                        <div class="saving__card-img">
+                            <img src="{% static 'digital/assets/icons/saving.svg' %}" alt="saving">
+                        </div>
+                        <p class="saving__card-txt">
+                            <span>Деньги.</span>
+                            Вы точно купите мебель дешевле, чем в розницу.
+                        </p>
+                    </div>
+                    <!-- /.saving__card -->
+                </div>
+                <!-- /.saving__cards -->
+                <h2 class="saving__title saving__title-two">
+                    На чем мы не экономим? <br>
+                    На вашем комфорте и
+                    качестве мебели!
+                </h2>
+
+            </div>
+            <!-- /.saving__content -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!-- /.saving -->
+</main>
+{% endblock main %}
