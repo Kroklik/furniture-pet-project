@@ -246,7 +246,7 @@ def to_cart_view(request, action, pk):
         return redirect(page)
     else:
         messages.warning(request, 'Авторизуйтесь')
-        return redirect(login)
+        return redirect('login')
 
 
 def my_cart_view(request):
