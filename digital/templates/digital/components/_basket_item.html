@@ -20,11 +20,11 @@
 
             </p>
             <div>
-
+                {% if item.product.quantity > 0 %}
                 <a href="{% url 'to_cart' item.product.pk 'add' %}">
                     ➕
                 </a>
-
+                {% endif %}
 
                 <a href="{% url 'to_cart' item.product.pk 'del' %}">
                     ➖
