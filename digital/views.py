@@ -261,7 +261,7 @@ def my_cart_view(request):
 
         return render(request, 'digital/my_cart.html', context)
     else:
-        return redirect(login)
+        return redirect('login')
 
 
 class SearchResults(ListView):
